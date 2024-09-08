@@ -1,10 +1,19 @@
+/* ManageProducts.css */
+
 .manage-products {
-    padding: 1rem;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
 }
 
 .manage-products h2 {
+    text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
 .manage-products ul {
@@ -13,22 +22,55 @@
 }
 
 .manage-products li {
-    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
 }
 
 .manage-products h3 {
     margin: 0;
-    color: #007bff;
+    font-size: 18px;
+    color: #555;
 }
 
 .manage-products p {
-    margin: 0.5rem 0;
+    margin: 5px 0;
+    color: #777;
 }
 
-.manage-products p:last-child {
-    margin-bottom: 0;
+.manage-products button {
+    padding: 8px 12px;
+    margin-top: 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.manage-products button:first-of-type {
+    background-color: #4CAF50;
+    /* Green color for Update */
+    color: white;
+}
+
+.manage-products button:last-of-type {
+    background-color: #f44336;
+    /* Red color for Delete */
+    color: white;
+}
+
+.manage-products button:hover {
+    opacity: 0.9;
+}
+
+.manage-products button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }

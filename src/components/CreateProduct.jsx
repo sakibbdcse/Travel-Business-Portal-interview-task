@@ -22,7 +22,7 @@ const CreateProduct = () => {
                 },
                 {
                     headers: {
-                        Authorization: `Bearer ${token}`, // Ensure correct format
+                        Authorization: `Bearer ${token}`,
                     },
                 }
             );
