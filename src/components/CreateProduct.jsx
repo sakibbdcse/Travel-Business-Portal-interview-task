@@ -10,7 +10,6 @@ const CreateProduct = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         const token = localStorage.getItem('token');
 
         try {
@@ -23,7 +22,7 @@ const CreateProduct = () => {
                 },
                 {
                     headers: {
-                        Authorization: `Bearer ${token}`,
+                        Authorization: `Bearer ${token}`, // Ensure correct format
                     },
                 }
             );
@@ -34,6 +33,7 @@ const CreateProduct = () => {
             setTitle('');
             setDescription('');
         } catch (error) {
+            console.error('Error details:', error.response ? error.response.data : error.message);
             Swal.fire('Error', 'Failed to create product. Please try again.', 'error');
         }
     };

@@ -24,8 +24,7 @@ const Login = () => {
             const { token, user } = response.data;
 
             dispatch(loginSuccess({ token, user }));
-
-            localStorage.setItem('token', token);
+            localStorage.setItem('token', user.token);
 
             navigate('/home');
         } catch (error) {
