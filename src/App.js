@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './components/Login';
+import Home from './components/Home';
+import ProtectedComponent from './components/ProtectedComponent';
+import CreateProduct from './components/CreateProduct';
+import ManageProducts from './components/ManageProducts';
+import UpdateProduct from './components/UpdateProduct';
+import DeleteProduct from './components/DeleteProduct';
+import NavBar from './components/NavBar';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/home"
+          element={
+            <ProtectedComponent>
+              <Home />
+            </ProtectedComponent>
+          }
+        />
+        <Route
+          path="/create"
+          element={
+            <ProtectedComponent>
+              <CreateProduct />
+            </ProtectedComponent>
+          }
+        />
+        <Route
+          path="/manage"
+          element={
+            <ProtectedComponent>
+              <ManageProducts />
+            </ProtectedComponent>
+          }
+        />
+        <Route
+          path="/update"
+          element={
+            <ProtectedComponent>
+              <UpdateProduct />
+            </ProtectedComponent>
+          }
+        />
+        <Route
+          path="/delete"
+          element={
+            <ProtectedComponent>
+              <DeleteProduct />
+            </ProtectedComponent>
+          }
+        />
+        <Route path="*" element={<Login />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
