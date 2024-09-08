@@ -9,7 +9,6 @@ const ManageProducts = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             const token = localStorage.getItem('token');
-
             if (!token) {
                 Swal.fire({
                     icon: 'error',
@@ -30,7 +29,7 @@ const ManageProducts = () => {
 
                 if (response.ok) {
                     const data = await response.json();
-                    setProducts(data);
+                    setProducts(data.categories);
                 } else {
                     Swal.fire({
                         icon: 'error',
